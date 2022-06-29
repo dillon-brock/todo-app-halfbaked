@@ -31,6 +31,11 @@ export async function updateTodo(todo) {
 
 export async function deleteTodo(todo) {
     // delete todo
-
+    const response = await client
+        .from('todos')
+        .delete()
+        .match({ id: todo.id })
+        .single();
+        
     return response.data;
 }

@@ -62,6 +62,8 @@ async function handleDelete(todo) {
     // 1. Get the index of the current todo
     // 2. Call the delete service function
     // 3. remove the todo from the todos array using splice
+    await deleteTodo(todo);
+    todos.splice(todos.indexOf(todo), 1);
 
     display();
 }
