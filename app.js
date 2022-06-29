@@ -27,6 +27,8 @@ async function handleAdd(task) {
     // *** 
     // 1. create a new todo with description set to task and complete false
     // 2. push the new todo into the todos array
+    const newTodo = createTodo({ description: task, complete: false });
+    todos.push(newTodo);
 
     display();
 }

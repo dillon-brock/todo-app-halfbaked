@@ -11,7 +11,10 @@ export async function getAllTodos() {
 
 export async function createTodo(todo) {
     // insert a todo
-
+    const response = await client
+        .from('todos')
+        .insert(todo)
+        .single();
     return response.data;
 }
 
